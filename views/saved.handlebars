@@ -1,13 +1,12 @@
-<div class="jumbotron text-center jumbotext">
-
-    <h1> Saved Articles</h1>
-
+<div class="jumbotron jumbotext text-center">
+    <h1>Mongo Scraper</h1>
+    <p>Saved Tracks</p>
 </div>
 
 <div class="container">
     <div class="col-md-12">
-        {{#if article}}
-        {{#each article}}
+        {{#if track}}
+        {{#each track}}
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>{{this.title}}</h4>
@@ -33,6 +32,6 @@
 </div>
 
 <!--Clicked Notes Modal-->
-{{#each article}}
+{{#each track}}
 {{> notes-modal }}
 {{/each}}

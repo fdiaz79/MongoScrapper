@@ -1,4 +1,4 @@
-//Handle Scrape button
+//Scrape button
 $("#scrape").on("click", function () {
     $.ajax({
         method: "GET",
@@ -15,29 +15,29 @@ $(".navbar-nav li").click(function () {
     $(this).addClass("active");
 });
 
-//Handle Save Article button
+//Save Track button
 $(".save").on("click", function () {
     var thisId = $(this).attr("data-id");
     $.ajax({
         method: "POST",
-        url: "/articles/save/" + thisId
+        url: "/tracks/save/" + thisId
     }).done(function (data) {
         window.location = "/"
     })
 });
 
-//Handle Delete Article button
+//Delete Track button
 $(".delete").on("click", function () {
     var thisId = $(this).attr("data-id");
     $.ajax({
         method: "POST",
-        url: "/articles/delete/" + thisId
+        url: "/tracks/delete/" + thisId
     }).done(function (data) {
         window.location = "/saved"
     })
 });
 
-//Handle Save Note button
+//Save Note button
 $(".saveNote").on("click", function () {
     var thisId = $(this).attr("data-id");
     if (!$("#noteText" + thisId).val()) {
@@ -50,9 +50,7 @@ $(".saveNote").on("click", function () {
                 text: $("#noteText" + thisId).val()
             }
         }).done(function (data) {
-            // Log the response
             console.log(data);
-            // Empty the notes section
             $("#noteText" + thisId).val("");
             $(".modalNote").modal("hide");
             window.location = "/saved"
@@ -60,13 +58,13 @@ $(".saveNote").on("click", function () {
     }
 });
 
-//Handle Delete Note button
+//Delete Note button
 $(".deleteNote").on("click", function () {
     var noteId = $(this).attr("data-note-id");
-    var articleId = $(this).attr("data-article-id");
+    var trackId = $(this).attr("data-track-id");
     $.ajax({
         method: "DELETE",
-        url: "/notes/delete/" + noteId + "/" + articleId
+        url: "/notes/delete/" + noteId + "/" + trackId
     }).done(function (data) {
         console.log(data)
         $(".modalNote").modal("hide");

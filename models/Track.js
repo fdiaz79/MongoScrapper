@@ -1,22 +1,21 @@
-// Require mongoose
 var mongoose = require("mongoose");
 var Note = require("./Note");
-// Create Schema class
+
 var Schema = mongoose.Schema;
 
-// Create article schema
-var ArticleSchema = new Schema({
+
+var TrackSchema = new Schema({
     title: {
         type: String,
-        required: true
+        // required: true
     },
-    summary: { //author
+    author: { 
         type: String,
-        //    required: true
+        // required: true
     },
     link: {
         type: String,
-        required: true
+        // required: true
     },
     saved: {
         type: Boolean,
@@ -28,8 +27,6 @@ var ArticleSchema = new Schema({
     }]
 });
 
-// Create the Article model with the ArticleSchema
-var Article = mongoose.model("Article", ArticleSchema);
+var Track = mongoose.model("Track", TrackSchema);
 
-// Export the model
-module.exports = Article;
+module.exports = Track;
