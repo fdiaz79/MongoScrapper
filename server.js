@@ -29,7 +29,9 @@ app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/mongoscraper");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraper";
+mongoose.connect(MONGODB_URI);
+// mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
 // Show any mongoose errors
