@@ -10,25 +10,28 @@ module.exports = function (app) {
     app.get("/scrape", function (req, res) {
         // grab the body with axios
         
-        axios.get("https://bandcamp.com").then(function (response) {
+        axios.get("https://www.eltiempo.com/deportes").then(function (response) {
             // save it to $ for a shorthand selector
             var $ = cheerio.load(response.data);
             
             
             // console.log($.html());
             
-            $("div.discover-item").each(function (i, element) {
+            $("div.notas-secundarias-bk").children("div.nota").each(function (i, element) {
 
                 // console.log(i, element);
 
-                console.log("scraping");
-                console.log($(this).children("a.item-title"));
+                // console.log(i);
+                console.log($(this));
                 
                 var result = {};
 
-                result.title = $(this).find("a.item-title").text();
-                result.author = $(this).children("a.item-artist").text();
-                result.link = $(this).children("a.item-title").attr("href");
+                result.title = $(this).find("h3.titulo").children("a.page-link").text();
+                result.summary = $(this).find("div.lead").children("a.page-link").text();
+                result.link = "https://eltiempo.com"+$(this).find("div.lead").children("a.page-link").attr("href");
+                result.section = $(this).find("div.seccion-fecha").children("a.seccion").text();
+                result.date = $(this).find("div.seccion-fecha").children("span.actualizacion").text();
+
 
                 // console.log("here is title", result.title);
 

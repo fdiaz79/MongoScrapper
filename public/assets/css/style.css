@@ -12,18 +12,44 @@
 }
 
 .jumbotron {
-    background-image: url(../images/musicbkg.jpg);
+    background-image: url(../images/sportsbkg.jpg);
     background-size: cover;
     width: 100%;
-    height: 500px;
+    height: 600px;
 }
 .jumbotext {
-    padding: 150px;
-    color: grey;
+    padding: 200px;
+    color: white;
     font-size: 20px;
+    font-weight: bold;
 }
 
+.flag {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#yellow {
+    color: yellow;
+}
+
+#blue {
+    color: blue;
+}
+
+#red {
+    color: red;
+}
 .nav-text {
     margin-top: 9px;
     color: white;
+}
+
+.article-title {
+    font-weight: bolder;
+}
+
+.section-time {
+    font-style: italic;
+    font-size: smaller;
 }

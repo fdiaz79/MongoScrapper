@@ -9,13 +9,19 @@ var TrackSchema = new Schema({
         type: String,
         // required: true
     },
-    author: { 
+    summary: { 
         type: String,
         // required: true
     },
     link: {
         type: String,
         // required: true
+    },
+    section: {
+        type: String
+    },
+    date: {
+        type: String
     },
     saved: {
         type: Boolean,

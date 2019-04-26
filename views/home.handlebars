@@ -1,6 +1,6 @@
 <div class="jumbotron jumbotext text-center">
     <h1>Mongo Scraper</h1>
-    <p>Sound Cloud Edition</p>
+    <p><span class="flag" id="yellow">Colombian </span><span class="flag" id="blue">Sports </span> <span class="flag" id="red">Edition</span></p>
 </div>
 
 <div class="container">
@@ -9,11 +9,12 @@
         {{#each track}}
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4>{{this.title}}</h4>
+                <h4 class="article-title">{{this.title}}</h4>
+                <p class="section-time text-right">{{this.section}} / {{this.date}}</p>
             </div>
             <div class="panel-body">
-                <p> {{this.summary}}</p>
-                <a href={{this.link}} target="_blank">{{this.link}}</a>
+                
+                <a href={{this.link}} target="_blank">{{this.summary}}</a>
                 <br><br>
                 <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Track</button>
             </div>
