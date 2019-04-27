@@ -24,10 +24,10 @@ Once the articles are retreived, the body of the app will be populated with this
 ![Home Page shot](./public/assets/images/scrshot1.png)
 
 
-![Saved Articles Page shot](./public/assets/images/scrshot2.png)
+![Saved Articles Page shot](./public/assets/images/scrshot2.PNG)
 
 
-![Notes Modal shot](./public/assets/images/scrshot3.png)
+![Notes Modal shot](./public/assets/images/scrshot3.PNG)
 
 ## Author
 
